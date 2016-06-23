@@ -25,6 +25,7 @@ details. E.g. to run editdist:
 The make command simply builds 'a.out'. When you run it, it complains about
 missing parameters, and then prints out the usage detail. The next two commands
 actually run this. "./a.out 1234 1 leaf" says the following:
+
   ./a.out  - Run the edit distance function, in Yao's semi-honest protocol
   1234     - This is the TCP port number to use
   1        - Start it up in the 'party 1' mode, which means it is the generator 
@@ -45,3 +46,9 @@ building the client in the second command.
 Currently, hamming test also asks for a <proto> parameter. For now, "yao" is the
 only valid value for this parameter. We sometimes use it to test out other
 protocols.
+ 
+ 
+To run over the SSH use cycle.sh:
+ ./cycle.ssh '<address for first program> <1/2> <input> | <address for second program> <1/2> <input>'
+Since the address is remote, you should use ssh command for it:
+ ssh <ip address or url> "<address of the program in the server>"
