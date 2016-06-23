@@ -1,0 +1,7 @@
+#!/bin/bash
+coproc 
+
+eval "$*"
+cat <&${COPROC[0]} >&${COPROC[1]}
+wait $COPROC_PID
+
